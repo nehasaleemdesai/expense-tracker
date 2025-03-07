@@ -10,8 +10,8 @@ const PORT = process.env.PORT || 443;
 
 //middlewares
 app.use(express.json());
-// app.use(cors());
-app.use(cors({ origin: "*" }));
+app.use(cors());
+// app.use(cors({ origin: "*" }));
 
 //routes
 readdirSync("./routes").map((route) => {
