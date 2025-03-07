@@ -1,16 +1,17 @@
+require("dotenv").config();
+
 const express = require("express");
 const cors = require("cors");
 const app = express();
 const { db } = require("./db/db");
 const { readdirSync } = require("fs");
 
-require("dotenv").config();
-
 const PORT = process.env.PORT || 443;
 
 //middlewares
 app.use(express.json());
-app.use(cors());
+// app.use(cors());
+app.use(cors({ origin: "*" }));
 
 //routes
 readdirSync("./routes").map((route) => {
